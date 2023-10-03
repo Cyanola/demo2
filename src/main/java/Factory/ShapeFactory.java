@@ -6,21 +6,24 @@ import models.Square;
 import models.Pentagon;
 import models.Circle;
 import models.Triangle;
+
+import java.util.Objects;
+
 public class ShapeFactory implements Creator {
 
     @Override
     public Shape factoryMethod(String name) {
-        if(name=="Пятиугольник"){
+        if(Objects.equals(name, "Пятиугольник")){
             return new Pentagon();
         }
-        else if(name =="Квадрат"){
+        else if(Objects.equals(name, "Квадрат")){
             return new Square();
         }
-        else if(name=="Треугольник"){
+        else if(Objects.equals(name, "Треугольник")){
             return new Triangle();
         }
 
-        else if(name=="Круг"){
+        else if(Objects.equals(name, "Круг")){
             return new Circle();
         }
         else{
